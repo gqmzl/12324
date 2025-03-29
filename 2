@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>简易图片生成网站</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+
+        input,
+        button {
+            padding: 10px;
+            margin: 5px;
+        }
+
+        img {
+            margin-top: 20px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>简易图片生成网站</h1>
+    <p>请输入图片的宽度和高度，然后点击生成按钮。</p>
+    <input type="number" id="width" placeholder="宽度" value="400">
+    <input type="number" id="height" placeholder="高度" value="300">
+    <button onclick="generateImage()">生成图片</button>
+    <div id="imageContainer"></div>
+
+    <script>
+        function generateImage() {
+            const width = document.getElementById('width').value;
+            const height = document.getElementById('height').value;
+            const imageUrl = `https://dummyimage.com/${width}x${height}/ff0000/ffffff`;
+            const img = document.createElement('img');
+            img.src = imageUrl;
+            img.alt = '生成的图片';
+            const imageContainer = document.getElementById('imageContainer');
+            imageContainer.innerHTML = '';
+            imageContainer.appendChild(img);
+        }
+    </script>
+</body>
+
+</html>
+    
